@@ -5,10 +5,15 @@ Importantly, the genes encode the intracellular phosphorus metabolic processes w
 
 User guide:
 1. Assuming you had a sample named $Sample.fa, and obtained a blast table named Sample.P.blast using BLAST+ or DIAMOND or other alignment tools, you can filter the result using filter_Generate_ORF2gene.py. 
+
 Command: python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $Sample.P.blast
+
 By doing this, you will obtain a ORF2gene file named $Sample.ORF2gene.txt, which descripts the P cycling gene for each ORF.
+
 If you have a lot of sample for analysis, a bash for loop is recommend for quickly processing the data. For example:
+
 for i in $Sample*.blast;do python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $i;done
 
 2. Assuming you already have calculated the coverage (or TPM) using Bowtie2, CheckM, Salmon or other tools, and obtained a abuncance file named $Sample.quant for all ORFs, you can easily extracted the abuncance of PCGs using Coverage_get.py.
+
 Command: python Coverage_get.py -i $Sample.ORF2gene.txt -t $Sample.quant -o $Sample.P.profile.txt
