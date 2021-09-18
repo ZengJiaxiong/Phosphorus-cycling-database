@@ -4,7 +4,7 @@ Homologous genes were added into the database to reduce the false positive rate.
 Importantly, the genes encode the intracellular phosphorus metabolic processes were added into PCyCDB, which should help researchers broaden the insights into not only the geochemical P cycling but also the microbial P metabolisms.
 
 User guide:
-1. Assuming you had a sample named $Sample.fa, and obtained a blast table named Sample.P.blast using BLAST+ or DIAMOND or other alignment tools, you can filter the result using filter_Generate_ORF2gene.py.
+1. Assuming you had a sample named $Sample.fa, and obtained a blast table named Sample.P.blast using BLAST+ or DIAMOND or other alignment tools, you can filter the result using filter_Generate_ORF2gene.py. 
 Command: python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $Sample.P.blast
 By doing this, you will obtain a ORF2gene file named $Sample.ORF2gene.txt, which descripts the P cycling gene for each ORF.
 If you have a lot of sample for analysis, a bash for loop is recommend for quickly processing the data. For example:
