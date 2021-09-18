@@ -12,8 +12,16 @@ By doing this, you will obtain a ORF2gene file named $Sample.ORF2gene.txt, which
 
 If you have a lot of sample for analysis, a bash for loop is recommend for quickly processing the data. For example:
 
-for i in $Sample*.blast;do python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $i;done
+for i in $Sample*.blast; do python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $i; done
 
 2. Assuming you already have calculated the coverage (or TPM) using Bowtie2, CheckM, Salmon or other tools, and obtained a abuncance file named $Sample.quant for all ORFs, you can easily extracted the abuncance of PCGs using Coverage_get.py.
 
 Command: python Coverage_get.py -i $Sample.ORF2gene.txt -t $Sample.quant -o $Sample.P.profile.txt
+
+By doing this, you will obtain a abundance file for each PCG of the $Sample.
+
+3. Finally, you can merged all the $Sample.P.profile.txt into one matrix table using merge_metaphlan_tables.py provided by MetaPhlan. 
+
+Reference
+
+Integrating taxonomic, functional, and strain-level profiling of diverse microbial communities with bioBakery 3 Francesco Beghini, Lauren J McIver, Aitor Blanco-Míguez, Leonard Dubois, Francesco Asnicar, Sagun Maharjan, Ana Mailyan, Paolo Manghi, Matthias Scholz, Andrew Maltez Thomas, Mireia Valles-Colomer, George Weingart, Yancong Zhang, Moreno Zolfo, Curtis Huttenhower, Eric A Franzosa, Nicola Segata. eLife (2021)
