@@ -8,7 +8,7 @@ User guide:
 
 Command: python filter_Generate_ORF2gene.py -s $identity -cov $alignment-coverage -hit $hitlength -b $Sample.P.blast
 
-Recommended filtering threthold: it is acceptable to use 30% identity and 25 amino acids cutoffs to investigate more potential PCGs and PCMs from metagenome sequencing data, because all known PCGs can be detected by PCycDB, while a little bit of predicted false-positive PCGs (1.04%) might also have the potential ability in mediating the P cycling. Also, one may use a stricter cutoff (i.e., 70% identity, 25 aa) to control the false positives (< 0.25%).
+Recommended filtering threthold: it is acceptable to use 30% identity and 25 amino acids cutoffs to investigate more potential PCGs from metagenome sequencing data, because all known PCGs can be detected by PCycDB, while a little bit of predicted false-positive PCGs (1.04%) might also have the potential ability in mediating the P cycling. Also, one may use a stricter cutoff (i.e., 70% identity, 25 aa) to control the false positives (< 0.25%).
 
 By doing this, you will obtain a ORF2gene file named $Sample.ORF2gene.txt, which descripts the P cycling gene for each ORF.
 
