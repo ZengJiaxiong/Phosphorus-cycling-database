@@ -27,3 +27,9 @@ By doing this, you will obtain a abundance file for each PCG of the $Sample.
 Reference
 
 Integrating taxonomic, functional, and strain-level profiling of diverse microbial communities with bioBakery 3 Francesco Beghini, Lauren J McIver, Aitor Blanco-Míguez, Leonard Dubois, Francesco Asnicar, Sagun Maharjan, Ana Mailyan, Paolo Manghi, Matthias Scholz, Andrew Maltez Thomas, Mireia Valles-Colomer, George Weingart, Yancong Zhang, Moreno Zolfo, Curtis Huttenhower, Eric A Franzosa, Nicola Segata. eLife (2021)
+
+
+Extract_Seq.py was a useful python script for fast sequence extraction.
+Command: python Extract_Seq.py -m $MAP -f $fasta -o $outputfile
+Where $MAP contains the ORF id you wish to extract, $fasta is the sequence file from which for extraction, and $outputfile is the outputfile name.
+Please note that this script uses {dictionary} function to fast extract the targeted sequence, it will preload all the sequence from $fasta into your system memory. 
